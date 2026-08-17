@@ -16,11 +16,12 @@
    8. Responsive (small screens)
    ============================================================ */
 
-/* Import two fonts from Google Fonts:
-   - Fraunces: a serif with a lot of character, used for big headings
-   - Literata: a serif made for comfortable reading, used for body text
-   - Work Sans: a clean sans-serif, used for nav links and small labels */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Literata:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&display=swap');
+/* Import three fonts from Google Fonts:
+- Merriweather: used for big headings
+- Monstserrat: used for body text
+- Work Sans: used for navigation links and smaller labels */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* ------------------------------------------------------------
    1. COLOR & FONT VARIABLES
@@ -31,25 +32,26 @@
    ------------------------------------------------------------ */
 :root {
   /* backgrounds */
-  --color-bg: #f3eee3;        /* warm oat/paper background */
-  --color-bg-alt: #ece3d2;    /* slightly deeper, for alternating sections */
-  --color-card: #faf7f0;      /* near-white, for cards sitting on the bg */
+  --color-bg: #edede6;        /* grayish white background */
+  --color-bg-alt: #d9d9d4;    /* slightly deeper, for alternating sections */
+  --color-card: #fcfcfa;      /* near-white, for cards sitting on the bg */
 
   /* text */
-  --color-ink: #2c2a26;       /* main text color, warm near-black */
-  --color-ink-soft: #5c574e;  /* softer text, for captions/subtitles */
+  --color-ink: #17301f;       /* main text color, green near-black */
+  --color-ink-soft: #52524d;  /* softer text, for captions/subtitles */
+
 
   /* accents */
-  --color-moss: #5f7256;      /* deep green — used for links, nav, headings */
-  --color-clay: #bd7357;      /* warm clay/rose — used sparingly, for emphasis */
-  --color-gold: #ad8a45;      /* muted gold — used for underlines/dividers */
+  --color-moss: #245c0c;      /* brighter green — used for links, nav, headings */
+  --color-yellowgreen: #a2bd57;      /* yellow green — used sparingly, for emphasis */
+  --color-deepgreen: #14532d;      /* deep green — used for underlines/dividers */
 
   /* lines & borders */
-  --color-line: #d9cdb8;
+  --color-line: #c3d9b8;
 
   /* fonts */
-  --font-display: "Fraunces", serif;   /* big headings */
-  --font-body: "Literata", serif;      /* paragraphs, poems */
+  --font-display: "Merriweather", serif;   /* big headings */
+  --font-body: "Monsterrat", sans-serif;      /* paragraphs, poems */
   --font-ui: "Work Sans", sans-serif;  /* nav, labels, buttons */
 
   /* shared spacing/sizing */
@@ -94,19 +96,19 @@ p {
 
 a {
   color: var(--color-moss);
-  text-decoration-color: var(--color-gold);
+  text-decoration-color: var(--color-deepgreen);
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--color-clay);
+  color: var(--color-yellowgreen);
 }
 
 /* Visible outline when tabbing through the site with a keyboard —
    important for accessibility, don't remove this. */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-clay);
+  outline: 2px solid var(--color-yellowgreen);
   outline-offset: 3px;
 }
 
@@ -169,7 +171,7 @@ img {
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
   color: var(--color-ink);
-  border-bottom-color: var(--color-gold);
+  border-bottom-color: var(--color-deepgreen);
 }
 
 /* ------------------------------------------------------------
@@ -243,7 +245,7 @@ img {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-clay);
+  color: var(--color-moss);
   display: block;
   margin-bottom: 0.6rem;
 }
