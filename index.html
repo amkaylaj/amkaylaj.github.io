@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This makes the site look right on phones, not just laptops -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayla — Home</title>
+  <!-- This one line connects the page to all the styling rules in style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============
+       This same header block is copied at the top of every page.
+       aria-current="page" marks which nav link is "active" — move
+       it to match whichever page you're on if you copy this. -->
+  <header class="site-header">
+    <div class="container">
+      <p class="site-title"><a href="index.html">Kayla</a></p>
+      <nav class="site-nav">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO / INTRO ============ -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Notes &amp; work</p>
+        <h1>Hi, I'm Kayla.</h1>
+        <p class="lede">
+          This is where I keep the things I've built, researched, and
+          written — class projects, work outside the classroom, and
+          poems that didn't fit anywhere else. Have a look around.
+        </p>
+
+        <!-- DECORATIVE DIVIDER
+             This is one image made of simple shapes: a few curved
+             rings on the left (like tree growth rings) that fade
+             into a dashed line on the right (like a flight path).
+             It's just decoration — feel free to delete this whole
+             <div> if you'd rather not have it, nothing else breaks. -->
+        <div class="motif" aria-hidden="true">
+          <svg width="100%" height="40" viewBox="0 0 700 40" xmlns="http://www.w3.org/2000/svg">
+            <!-- concentric rings -->
+            <circle cx="40" cy="20" r="6" fill="none" stroke="#5f7256" stroke-width="1.4" opacity="0.8"/>
+            <circle cx="40" cy="20" r="13" fill="none" stroke="#5f7256" stroke-width="1.2" opacity="0.55"/>
+            <circle cx="40" cy="20" r="20" fill="none" stroke="#5f7256" stroke-width="1" opacity="0.35"/>
+            <!-- line trailing off to the right, like a contrail -->
+            <line x1="70" y1="20" x2="300" y2="20" stroke="currentColor" stroke-width="1"/>
+            <line x1="310" y1="20" x2="660" y2="20" stroke="#bd7357" stroke-width="1.2" stroke-dasharray="2 6"/>
+            <circle cx="670" cy="20" r="3" fill="#bd7357"/>
+          </svg>
+        </div>
+
+        <!-- ============ PREVIEW CARDS ============
+             Three cards linking to the main sections. Edit the
+             <p> text inside each card to describe your own work. -->
+        <div class="card-grid">
+          <a class="card" href="projects.html">
+            <span class="card-label">01 — Build</span>
+            <h3>Projects</h3>
+            <p>Things I've built in and out of class, from first drafts to finished versions.</p>
+          </a>
+          <a class="card" href="research.html">
+            <span class="card-label">02 — Study</span>
+            <h3>Research</h3>
+            <p>Longer-form work: papers, analysis, and questions I'm still chasing.</p>
+          </a>
+          <a class="card" href="writing.html">
+            <span class="card-label">03 — Write</span>
+            <h3>Writing</h3>
+            <p>Poems and other writing that doesn't belong in a research folder.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Kayla. Built by hand, one tag at a time.</p>
+      <p><a href="mailto:you@example.com">you@example.com</a> · <a href="https://github.com/yourusername">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+/* ============================================================
+   STYLE.CSS
+   This one file controls the look of every page on the site.
+   Each page (index.html, projects.html, etc.) links to this
+   file with: <link rel="stylesheet" href="style.css">
+
+   It's organized in sections — search for the ALL CAPS
+   headers below to jump around:
+   1. Fonts & color variables (the "tokens" for the whole site)
+   2. Reset & base styles
+   3. Header & navigation
+   4. Hero / intro section
+   5. Cards (used on Home, Projects, Research)
+   6. Writing / poetry page
+   7. Footer
+   8. Responsive (small screens)
+   ============================================================ */
+
+/* Import two fonts from Google Fonts:
+   - Fraunces: a serif with a lot of character, used for big headings
+   - Literata: a serif made for comfortable reading, used for body text
+   - Work Sans: a clean sans-serif, used for nav links and small labels */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Literata:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&display=swap');
+
+/* ------------------------------------------------------------
+   1. COLOR & FONT VARIABLES
+   Variables (the --name: value; lines below) let you change a
+   color or font in ONE place and have it update everywhere.
+   Try changing --color-clay below and refresh the page — every
+   place that uses var(--color-clay) will change with it.
+   ------------------------------------------------------------ */
+:root {
+  /* backgrounds */
+  --color-bg: #f3eee3;        /* warm oat/paper background */
+  --color-bg-alt: #ece3d2;    /* slightly deeper, for alternating sections */
+  --color-card: #faf7f0;      /* near-white, for cards sitting on the bg */
+
+  /* text */
+  --color-ink: #2c2a26;       /* main text color, warm near-black */
+  --color-ink-soft: #5c574e;  /* softer text, for captions/subtitles */
+
+  /* accents */
+  --color-moss: #5f7256;      /* deep green — used for links, nav, headings */
+  --color-clay: #bd7357;      /* warm clay/rose — used sparingly, for emphasis */
+  --color-gold: #ad8a45;      /* muted gold — used for underlines/dividers */
+
+  /* lines & borders */
+  --color-line: #d9cdb8;
+
+  /* fonts */
+  --font-display: "Fraunces", serif;   /* big headings */
+  --font-body: "Literata", serif;      /* paragraphs, poems */
+  --font-ui: "Work Sans", sans-serif;  /* nav, labels, buttons */
+
+  /* shared spacing/sizing */
+  --max-width: 780px;
+  --radius: 6px;
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE STYLES
+   Browsers add their own default spacing to things like <ul>
+   and <h1>. This section clears that out so we start from a
+   predictable, blank slate.
+   ------------------------------------------------------------ */
+* {
+  box-sizing: border-box; /* padding/border no longer add to an element's width */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+  color: var(--color-ink);
+}
+
+p {
+  margin: 0 0 1.2em 0;
+}
+
+a {
+  color: var(--color-moss);
+  text-decoration-color: var(--color-gold);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-clay);
+}
+
+/* Visible outline when tabbing through the site with a keyboard —
+   important for accessibility, don't remove this. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* A reusable "container" class that centers content and keeps
+   line lengths readable. Used on every page. */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   3. HEADER & NAVIGATION
+   ------------------------------------------------------------ */
+.site-header {
+  padding: 2.5rem 0 1.5rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.site-title a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-gold);
+}
+
+/* ------------------------------------------------------------
+   4. HERO / INTRO SECTION (mainly used on index.html)
+   ------------------------------------------------------------ */
+.hero {
+  padding: 3.5rem 0 2rem 0;
+}
+
+.hero p.eyebrow {
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--color-moss);
+  margin-bottom: 0.8rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  max-width: 14ch;
+}
+
+.hero .lede {
+  font-size: 1.15rem;
+  color: var(--color-ink-soft);
+  max-width: 52ch;
+}
+
+/* The decorative divider: rings (left) fading into a flight line
+   (right) — a small nod to forest growth rings and flight paths.
+   It's just an SVG sitting in the page; see index.html for where
+   it's placed. Swap it for a photo or remove it entirely if you'd
+   rather — nothing else on the page depends on it. */
+.motif {
+  margin: 2rem 0 3rem 0;
+  color: var(--color-line); /* controls the stroke color via currentColor */
+}
+
+/* ------------------------------------------------------------
+   5. CARDS
+   Used for the "Projects / Research / Writing" preview cards on
+   the homepage, and for list items on the Projects/Research pages.
+   ------------------------------------------------------------ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0 4rem 0;
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  display: block;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(44, 42, 38, 0.08);
+  color: var(--color-ink);
+}
+
+.card .card-label {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-clay);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* A simpler stacked list item, used on Projects/Research pages
+   for entries that need more room (longer descriptions, tags). */
+.entry {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.entry:first-of-type {
+  border-top: 1px solid var(--color-line);
+}
+
+.entry .entry-meta {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-moss);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.entry h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.entry .tags {
+  margin-top: 0.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--color-bg-alt);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  margin-right: 0.4rem;
+  color: var(--color-ink-soft);
+}
+
+/* ------------------------------------------------------------
+   6. WRITING / POETRY PAGE
+   Poems get a narrower column and extra room to breathe.
+   ------------------------------------------------------------ */
+.poem {
+  max-width: 46ch;
+  margin: 0 auto 4rem auto;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.poem:last-child {
+  border-bottom: none;
+}
+
+.poem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.poem .poem-date {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.poem-body {
+  font-style: italic;
+  white-space: pre-line; /* respects line breaks you type in the HTML */
+  color: var(--color-ink);
+}
+
+/* ------------------------------------------------------------
+   7. FOOTER
+   ------------------------------------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--color-line);
+  margin-top: 2rem;
+  padding: 2rem 0 3rem 0;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer a {
+  color: var(--color-ink-soft);
+}
+
+/* ------------------------------------------------------------
+   8. RESPONSIVE — adjustments for narrow (phone-width) screens
+   ------------------------------------------------------------ */
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Respect users who've asked their system to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
