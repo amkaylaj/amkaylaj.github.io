@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- This makes the site look right on phones, not just laptops -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kayla — Home</title>
+  <title>Kayla | Home</title>
   <!-- This one line connects the page to all the styling rules in style.css -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,7 @@
        it to match whichever page you're on if you copy this. -->
   <header class="site-header">
     <div class="container">
-      <p class="site-title"><a href="index.html">Kayla</a></p>
+      <p class="site-title"><a href="index.html">Kayla Johnson</a></p>
       <nav class="site-nav">
         <a href="index.html" aria-current="page">Home</a>
         <a href="projects.html">Projects</a>
@@ -31,30 +31,22 @@
   <main>
     <section class="hero">
       <div class="container">
+        <img class="profile-photo-square" src="assets/profile.jpg" alt="Photo of Kayla"> <! References file in assets -->
         <p class="eyebrow">Notes &amp; work</p>
         <h1>Hi, I'm Kayla.</h1>
         <p class="lede">
-          This is where I keep the things I've built, researched, and
-          written — class projects, work outside the classroom, and
-          poems that didn't fit anywhere else. Have a look around.
+          Here you can find some of the projects I have worked on inside and 
+          outside the classroom, my research projects, as well as poems and 
+          ramblings about some of my favorite works of literature. 
         </p>
 
         <!-- DECORATIVE DIVIDER
-             This is one image made of simple shapes: a few curved
-             rings on the left (like tree growth rings) that fade
-             into a dashed line on the right (like a flight path).
-             It's just decoration — feel free to delete this whole
-             <div> if you'd rather not have it, nothing else breaks. -->
+             Leaf divider with small botanical mark in the center-->
         <div class="motif" aria-hidden="true">
-          <svg width="100%" height="40" viewBox="0 0 700 40" xmlns="http://www.w3.org/2000/svg">
-            <!-- concentric rings -->
-            <circle cx="40" cy="20" r="6" fill="none" stroke="#5f7256" stroke-width="1.4" opacity="0.8"/>
-            <circle cx="40" cy="20" r="13" fill="none" stroke="#5f7256" stroke-width="1.2" opacity="0.55"/>
-            <circle cx="40" cy="20" r="20" fill="none" stroke="#5f7256" stroke-width="1" opacity="0.35"/>
-            <!-- line trailing off to the right, like a contrail -->
-            <line x1="70" y1="20" x2="300" y2="20" stroke="currentColor" stroke-width="1"/>
-            <line x1="310" y1="20" x2="660" y2="20" stroke="#bd7357" stroke-width="1.2" stroke-dasharray="2 6"/>
-            <circle cx="670" cy="20" r="3" fill="#bd7357"/>
+          <svg width="100%" height="30" viewBox="0 0 700 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="15" x2="320" y2="15" stroke="currentColor" stroke-width="1"/>
+            <path d="M350 15 C 340 2, 360 2, 350 15 C 360 28, 340 28, 350 15 Z" fill="#5f7256" opacity="0.8"/>
+            <line x1="380" y1="15" x2="700" y2="15" stroke="currentColor" stroke-width="1"/>
           </svg>
         </div>
 
@@ -65,17 +57,17 @@
           <a class="card" href="projects.html">
             <span class="card-label">01 — Build</span>
             <h3>Projects</h3>
-            <p>Things I've built in and out of class, from first drafts to finished versions.</p>
+            <p>Some projects I have built, both in and out of the class. </p>
           </a>
           <a class="card" href="research.html">
             <span class="card-label">02 — Study</span>
             <h3>Research</h3>
-            <p>Longer-form work: papers, analysis, and questions I'm still chasing.</p>
+            <p>ResearcH I have been doing as part of my undergraduate studies.</p>
           </a>
           <a class="card" href="writing.html">
             <span class="card-label">03 — Write</span>
             <h3>Writing</h3>
-            <p>Poems and other writing that doesn't belong in a research folder.</p>
+            <p>Poetry I have written as well as reviews of my favorite works of literature!</p>
           </a>
         </div>
       </div>
@@ -85,8 +77,8 @@
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Kayla. Built by hand, one tag at a time.</p>
-      <p><a href="mailto:you@example.com">you@example.com</a> · <a href="https://github.com/yourusername">GitHub</a></p>
+      <p>&copy; 2026 Kayla Johnson. Built via Claude Sonnet 5.</p>
+      <p><a href="mailto:amkaylaj@gmail.com">amkaylaj@gmail.com</a> · <a href="https://github.com/amkaylaj">GitHub</a></p>
     </div>
   </footer>
 
