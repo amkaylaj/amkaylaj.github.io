@@ -211,15 +211,28 @@ img {
   color: var(--color-line); /* controls the stroke color via currentColor */
 }
 
-/* Square version of the profile photo */
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap-reverse;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 260px;
+}
+
 .profile-photo-square {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;      /* crops the photo to fill the square instead of stretching it */
-  border-radius: var(--radius);  /* small rounded corners; use 0 for sharp corners */
-  border: 3px solid var(--color-card);
-  box-shadow: 0 2px 10px rgba(44, 42, 38, 0.12);
-  margin-bottom: 1.5rem;
+  width: 220px;       /* was 160px — increase further if you want it bigger still */
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: none;        /* removes the white border */
+  box-shadow: none;    /* removes the drop shadow too */
+  margin-bottom: 0;
+  flex-shrink: 0;      /* keeps the photo from getting squished when the window is narrow */
 }
 
 /* ------------------------------------------------------------
