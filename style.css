@@ -386,16 +386,18 @@ img {
 /* ------------------------------------------------------------
    8. RESPONSIVE — adjustments for narrow (phone-width) screens
    ------------------------------------------------------------ */
-@media (max-width: 700px) {
+@media (min-width: 700px) {
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   .site-header .container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
   }
 }
-
+ 
 /* Respect users who've asked their system to reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -403,3 +405,4 @@ img {
     scroll-behavior: auto !important;
   }
 }
+ 
