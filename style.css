@@ -228,6 +228,7 @@ img {
   width: 220px;       /* was 160px — increase further if you want it bigger still */
   height: 220px;
   object-fit: cover;
+  object-position: top; 
   border-radius: var(--radius);
   border: none;        /* removes the white border */
   box-shadow: none;    /* removes the drop shadow too */
