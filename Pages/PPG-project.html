@@ -35,8 +35,32 @@
           </div>
         <div class="about-text">
           <p>
-            One or two paragraphs describing the project — what problem it solves, your
-            approach, and the outcome. Keep it in the same voice as your About page.
+            PPG Project
+
+<b>Problem</b>
+
+Standard pulse oximeters, which measure blood oxygen saturation (SpO2) and heart rate through photoplethysmography (PPG), 
+are known to have reduced accuracy in patients with darker skin tones, which is a documented bias that can mask 
+hypoxemia and lead to delayed or missed clinical intervention. My teammate and I set out to design a wearable 
+device that begins to address this gap at the hardware level.
+
+<b>Approach</b>
+
+As a two-person team, we designed and built a wearable SpO2 and heart rate monitor using a MAX30102 sensor 
+and an ESP32 microcontroller. My focus was on the circuit schematics, PCB layout, and physical build, which 
+included hands-on soldering, perf-board assembly, and a 3D-printed enclosure for wearability. 
+To address the skin-tone accuracy gap, I implemented adaptive LED current control to adjust signal intensity 
+across varying skin pigmentation, along with motion artifact detection to reduce signal noise from patient movement. 
+Support for this project came from UVA's Venture Forward Program, which supports entrepreneurial development within the School of Engineering.
+
+<b>Outcome & Next Steps</b>
+
+The result is a functional wearable prototype that demonstrates an end-to-end hardware design process, 
+from circuit schematic to working device, with early-stage features aimed at more equitable signal accuracy. 
+This project is still a work in progress. Next steps include formal testing across a range of skin tones to validate 
+and refine the adaptive LED approach, along with further calibration of motion artifact detection. 
+
+
           </p>
         </div>
 
@@ -44,24 +68,11 @@
              <figure> blocks; the grid adjusts automatically. -->
         <div class="project-gallery">
           <figure>
-            <img src="../images/project-photo-1.jpg" alt="Describe what this image shows">
+            <img src="../images/PPG Sensor Testing.jpeg" alt="Testing the final sensor during live presentation">
             <figcaption>Optional short caption</figcaption>
-          </figure>
-          <figure>
-            <img src="../images/project-photo-2.jpg" alt="Describe what this image shows">
           </figure>
         </div>
 
-        <!-- VIDEO — see notes below for two ways to do this -->
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="Project demo video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
 
         <p>
           <a href="https://github.com/amkaylaj/repo-name">View code on GitHub</a> ·
